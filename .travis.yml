@@ -5,5 +5,5 @@ node_js:
 - '7'
 install: true
 script:
-- npm build
-- npm build-dts
+- npm run build
+- npm run build-dts
