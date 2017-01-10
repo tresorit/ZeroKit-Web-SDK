@@ -1,7 +1,7 @@
 # ZeroKit Web SDK 
 [![Build Status](https://travis-ci.org/tresorit/ZeroKit-Web-SDK.svg?branch=master)](https://travis-ci.org/tresorit/ZeroKit-Web-SDK)
 
-This is the Web SDK of ZeroKit, that lets you enable *secure authentication* and *end-to-end encryption* in your application.
+This is the Web SDK of [ZeroKit](https://tresorit.com/zerokit), that lets you enable *secure authentication* and *end-to-end encryption* in your application.
 It deals with password inputs, encryption and sharing, separating all the code that handles encryption keys and authentication, protecting you from accindental leaks and most XSS attacks. 
 
 The ZeroKit SDK for Web is currently under development and is accessible as a preview. We continuously improve it and fix bugs. Feedback is always welcome.
@@ -43,6 +43,6 @@ Go ahead to the [management portal](https://manage.tresorit.io) and find out mor
 
 ## Requirements
 First, to use the SDK you need a tenant server (basically a subscription to ZeroKit).
-You can get one for free at the ZeroKit [tenant management portal](https://manage.tresorit.io),
+You can get one for free [here](https://tresorit.com/zerokit),
 where you can also find a detailed documentation and sample apps for many platforms. You can also get the relevant
 example from [GitHub](https://github.com/tresorit/ZeroKit-simple-example).
