@@ -48,7 +48,7 @@ export class IframeHandler {
     this.loadPromise = new Promise((res, rej) => {
       this.iframe.onload = () => {
         try {
-          this.iframe.addEventListener("message", this.handleResponse);
+          window.addEventListener("message", this.handleResponse);
           res();
         } catch (ex) {
           rej(ex);
