@@ -21,7 +21,8 @@ export {
 export {
   createInvitationLinkNoPassword,
   acceptInvitationLinkNoPassword,
-  getInvitationLinkInfo
+  getInvitationLinkInfo,
+  revokeInvitationLink
 } from "./tresors/invitationLinks";
 
 export {
