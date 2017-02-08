@@ -45,7 +45,7 @@ function handleResult(callback: LoginCallback, loginResponse: LoginResponse, reT
   } else {
     if (callback) {
       const cbRes = callback(loginResponse.userId, loginResponse.needsRedirect);
-      if (cbRes.then)
+      if (cbRes && cbRes.then)
         return cbRes.then(() => loginResponse.userId);
     }
     return Promise.resolve(loginResponse.userId);
