@@ -9,9 +9,19 @@ import { PathData } from "../utils/pathData";
 
 /**
  * Stores the path/urls of the sdk
+ * The default values are made so that the Tenant servers can fill the TenantBaseAddress in and make the setup call not necessary.
+ * Explicitly calling setup is still recommended.
  */
-let paths: PathData;
-
+let paths: PathData = {
+  origin: "{{TenantBaseAddress}}",
+  path: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/api.html`,
+  loginPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/embedded-login.html`,
+  registerPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/embedded-register.html`,
+  acceptInvitationLinkPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/embedded-acceptInvitationLink.html`,
+  createInvitationLinkPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/embedded-createInvitationLink.html`,
+  changePasswordPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/embedded-changePassword.html`,
+  authPath: `{{TenantBaseAddress}}/static/v${SDK_VERSION}/static/auth.html`
+};
 /**
  * The handler of the main iframe
  */
@@ -40,7 +50,7 @@ function createIframe(url: string, parentElement: HTMLElement = document.body, h
  * @param origin The origin of the sdk
  * @param tenantPath The path of your tenant on the tenant host
  */
-export function setup(origin: string, tenantPath: string = ""): void {
+export function setup(origin: string = "{{BaseUrl}}", tenantPath: string = ""): void {
   if (paths)
     throw new Error("setup called twice");
   const iframeRoot = `${origin}${tenantPath}/static/v${SDK_VERSION}`;
@@ -61,7 +71,7 @@ export function setup(origin: string, tenantPath: string = ""): void {
  * @private
  */
 function checkSetup(): void {
-  if (!paths) throw new Error("setup must be called before usage.");
+  if (!paths || paths.origin === "{{TenantBaseAddress}}") throw new Error("setup must be called before usage.");
 }
 
 /**
