@@ -17,7 +17,6 @@
     "start": "webpack --watch",
     "build": "webpack -p",
     "build-dev": "webpack -d",
-    "build-dts": "dts-generator --name zerokit-web-sdk --project ./ --main zerokit-web-sdk/src/index --out ./lib/zkit_sdk.d.ts",
     "lint": "tslint --project tsconfig.json -c tslint.json src/**/*.ts"
   },
   "dependencies": {

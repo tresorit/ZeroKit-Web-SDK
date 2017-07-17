@@ -5,7 +5,7 @@ module.exports = {
   output: {
     filename: 'zkit_sdk.js',
     library: 'zkit_sdk',
-    // libraryTarget: "umd",
+    libraryTarget: "umd",
     path: './lib'
   },
   resolve: {
