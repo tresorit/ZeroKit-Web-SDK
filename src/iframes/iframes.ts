@@ -50,9 +50,10 @@ function createIframe(url: string, parentElement: HTMLElement = document.body, h
  * @param origin The origin of the sdk
  * @param tenantPath The path of your tenant on the tenant host
  */
-export function setup(origin: string = "{{BaseUrl}}", tenantPath: string = ""): void {
-  if (paths)
+export function setup(origin: string = "{{TenantBaseAddress}}", tenantPath: string = ""): void {
+  if (!paths.origin.startsWith("{"))
     throw new Error("setup called twice");
+
   const iframeRoot = `${origin}${tenantPath}/static/v${SDK_VERSION}`;
   paths = {
     origin,
@@ -71,7 +72,8 @@ export function setup(origin: string = "{{BaseUrl}}", tenantPath: string = ""): 
  * @private
  */
 function checkSetup(): void {
-  if (!paths || paths.origin === "{{TenantBaseAddress}}") throw new Error("setup must be called before usage.");
+  if (paths.origin.startsWith("{"))
+    throw new Error("setup must be called before usage.");
 }
 
 /**
