@@ -1,3 +1,5 @@
+**Notice:** This project is discontinued and no longer maintained nor supported by Tresorit. This repository only exists for archival purposes.
+***
 # ZeroKit Web SDK 
 [![Build Status](https://travis-ci.org/tresorit/ZeroKit-Web-SDK.svg?branch=master)](https://travis-ci.org/tresorit/ZeroKit-Web-SDK)
 
